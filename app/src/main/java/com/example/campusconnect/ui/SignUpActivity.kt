@@ -7,6 +7,7 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.text.TextUtils
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
@@ -120,7 +121,7 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     // Navigate to login activity
-    fun goToLogin() {
+    fun goToLogin(view: View) {
         val intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)
     }
