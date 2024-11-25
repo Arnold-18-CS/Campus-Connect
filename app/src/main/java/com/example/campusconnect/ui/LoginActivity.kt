@@ -21,6 +21,14 @@ class LoginActivity : AppCompatActivity(){
 
        auth = FirebaseAuth.getInstance()
 
+//        // Check if the user is already logged in
+//        if (auth.currentUser != null) {
+//            // If logged in, navigate to the ProfileActivity directly
+//            val intent = Intent(this, ProfileActivity::class.java)
+//            startActivity(intent)
+//            finish()  // Close LoginActivity so the user can't go back to it
+//        }
+
        val emailEditText: EditText = findViewById(R.id.emailEditText)
        val passwordEditText: EditText = findViewById(R.id.passwordEditText)
        val loginButton: Button = findViewById(R.id.loginButton)
@@ -45,6 +53,9 @@ class LoginActivity : AppCompatActivity(){
                     // Successfully logged in
                     Toast.makeText(this, "Login Successful!", Toast.LENGTH_SHORT).show()
                     // Navigate to next screen (e.g., MainActivity)
+                    val intent = Intent(this, CreateEventActivity::class.java)
+                    startActivity(intent)
+                    finish()
                 } else {
                     // Login failed
                     Toast.makeText(this, "Login Failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
